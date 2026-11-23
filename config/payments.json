@@ -1,11 +1,11 @@
 {
   "provider": "paddle",
-  "environment": "sandbox",
-  "clientToken": "",
+  "environment": "production",
+  "clientToken": "live_136c808f5f2c16157b75edb2a74",
   "prices": {
-    "monthly": "",
-    "yearly": "",
-    "lifetime": ""
+    "monthly": "pri_01m857bqjbetv9nec04ds354fa",
+    "yearly": "pri_01m857cqr9jnmfjxh0fj8nj97x",
+    "lifetime": "pri_01m857dgxf2awp6n7q39g05te8"
   },
   "displayPrices": {
     "monthly": "14,99 zł",
