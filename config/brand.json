@@ -1,0 +1,27 @@
+{
+  "appName": "Ulga",
+  "fullName": "Ulga — sen i spokój",
+  "colors": {
+    "bg": "#0F1B2D",
+    "bg2": "#0B1422",
+    "surface": "#16243A",
+    "surface2": "#1D2E48",
+    "primary": "#A9A6E8",
+    "onPrimary": "#141A33",
+    "accent": "#E9DCC9",
+    "text": "#E9DCC9",
+    "muted": "#9AA3B8"
+  },
+  "colorsLight": {
+    "bg": "#F4EFE7",
+    "bg2": "#EAE3D8",
+    "surface": "#FFFFFF",
+    "surface2": "#F1ECF9",
+    "primary": "#5B57B8",
+    "onPrimary": "#FFFFFF",
+    "accent": "#8A6B45",
+    "text": "#1C2536",
+    "muted": "#5E6779"
+  },
+  "fontStack": "system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif"
+}

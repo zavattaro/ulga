@@ -1,0 +1,27 @@
+{
+  "provider": "paddle",
+  "environment": "sandbox",
+  "clientToken": "",
+  "prices": {
+    "monthly": "",
+    "yearly": "",
+    "lifetime": ""
+  },
+  "displayPrices": {
+    "monthly": "14,99 zł",
+    "yearly": "99 zł",
+    "lifetime": "199 zł"
+  },
+  "trialDays": 0,
+  "successUrl": "",
+  "publicKeyJwk": {
+    "kty": "EC",
+    "crv": "P-256",
+    "x": "ejNqWJKL3-3Fn6u9wgEZvetxLMQ_995268je8cZCx8I",
+    "y": "zkTwFST6DBupBXwukPSIHkYR8jZpiwpw_PAvStBV5Uw",
+    "ext": true
+  },
+  "promoFreeUntil": null,
+  "promoLabelKey": "promo.launch",
+  "_aviso": "publicKeyJwk de TESTE (keys/ gerada em 23/11/2026). Trocar pela chave de produção antes de vender. clientToken vazio = paywall 'wkrótce' (simulação só com ?dev=1). promoFreeUntil (ISO com offset) liga a promoção de lançamento: tudo grátis até essa data."
+}
