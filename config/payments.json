@@ -14,6 +14,7 @@
   },
   "trialDays": 0,
   "successUrl": "",
+  "licenseApi": "",
   "publicKeyJwk": {
     "kty": "EC",
     "crv": "P-256",
@@ -23,5 +24,5 @@
   },
   "promoFreeUntil": null,
   "promoLabelKey": "promo.launch",
-  "_aviso": "publicKeyJwk de TESTE (keys/ gerada em 23/11/2026). Trocar pela chave de produção antes de vender. clientToken vazio = paywall 'wkrótce' (simulação só com ?dev=1). promoFreeUntil (ISO com offset) liga a promoção de lançamento: tudo grátis até essa data."
+  "_aviso": "publicKeyJwk de TESTE (keys/ gerada em 23/11/2026). Trocar pela chave de produção antes de vender. clientToken vazio = paywall 'wkrótce' (simulação só com ?dev=1). promoFreeUntil (ISO com offset) liga a promoção de lançamento: tudo grátis até essa data. licenseApi = URL do serviço de licenças (Cloudflare Worker, ver licencas-worker/README.md); vazio = código manual."
 }
