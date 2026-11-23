@@ -12,6 +12,7 @@ import { renderSettings } from './screens/settings.js';
 import { renderPaywall } from './screens/paywall.js';
 import { renderActivate } from './screens/activate.js';
 import { loadPaymentsConfig, checkLicenseOnLoad, setPendingCode, peekPendingCode } from './license.js';
+import { autoLicenseOnLoad } from './checkout.js';
 
 const routes = {
   welcome: renderWelcome,
@@ -111,6 +112,12 @@ async function boot() {
   window.addEventListener('hashchange', route);
   await route();
   if (lic.expired) toast(t('license.expired_notice'));
+  // Licencja automatyczna (tylko gdy config.licenseApi): dokończ przerwany zakup, po cichu odnów subskrypcję
+  loadPaymentsConfig().then((cfg) => autoLicenseOnLoad(cfg)).then((r) => {
+    if (!r.renewed && !r.claimed) return;
+    toast(t(r.renewed ? 'purchase.renewed' : 'license.toast_ok'));
+    if (/^#?\/?(home|settings|paywall|sounds|progress)?([?].*)?$/.test(location.hash)) route();
+  });
   if ('serviceWorker' in navigator && location.protocol !== 'file:') {
     navigator.serviceWorker.register('sw.js').catch((e) => console.warn('[sw]', e));
   }
