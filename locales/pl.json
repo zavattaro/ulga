@@ -154,7 +154,7 @@
   "paywall.continue": "Dalej",
   "paywall.activated": "Wersja premium aktywna (symulacja)",
   "paywall.thanks_title": "Dziękujemy za zakup!",
-  "paywall.thanks_text": "Kod licencyjny wyślemy e-mailem. Wklej go poniżej, aby włączyć wersję premium.",
+  "paywall.thanks_text": "Kod licencyjny wyślemy na adres e-mail podany przy płatności — zwykle w ciągu kilku godzin, najpóźniej w ciągu 24 godzin. Otwórz link z e-maila albo wklej kod poniżej, w polu „Mam kod licencyjny”.",
   "paywall.err_offline": "Brak internetu. Połącz się, aby dokonać zakupu.",
   "paywall.err_noprice": "Ten plan nie jest jeszcze dostępny.",
   "paywall.err_checkout": "Nie udało się otworzyć płatności. Spróbuj ponownie.",
