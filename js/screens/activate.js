@@ -1,6 +1,7 @@
 // Ulga — aktywacja kodu licencyjnego (formularz wspólny dla paywalla i Ustawień + ekran #/activate?code=…)
 import { t } from '../i18n.js';
 import { activateLicense, takePendingCode } from '../license.js';
+import { claimPurchase, normalizeTxn } from '../checkout.js';
 import { esc, go, fmtDate, toast, announce, icon } from '../ui.js';
 
 export function planName(plan) {
@@ -74,6 +75,71 @@ export function bindLicenseForm(root, { id = 'lic', onSuccess } = {}) {
     if (res.valid) {
       toast(t('license.toast_ok'));
       if (onSuccess) onSuccess(res);
+    } else {
+      input.setAttribute('aria-invalid', 'true');
+      input.focus();
+    }
+  });
+}
+
+/** Komunikat dla błędu claimPurchase/requestLicense (serwis licencji). */
+export function purchaseErrorText(reason) {
+  switch (reason) {
+    case 'badtxn': return t('purchase.err_txn_format');
+    case 'offline': return t('purchase.err_offline');
+    case 'pending': return t('purchase.err_pending');
+    case 'notpaid': return t('purchase.err_notpaid');
+    case 'notfound': return t('purchase.err_notfound');
+    case 'wrong': return t('purchase.err_wrong');
+    case 'busy': return t('purchase.err_busy');
+    default: return t('purchase.err_server');
+  }
+}
+
+/** HTML „Przywróć zakup” (numer transakcji txn_… → serwis licencji). */
+export function restoreFormHtml({ id = 'rst', open = false } = {}) {
+  return `
+    <details class="license-box" id="${id}-box"${open ? ' open' : ''}>
+      <summary>${esc(t('purchase.restore_h'))}</summary>
+      <form class="license-form" id="${id}-form" novalidate>
+        <p class="muted small">${esc(t('purchase.restore_intro'))}</p>
+        <label for="${id}-txn">${esc(t('purchase.txn_label'))}</label>
+        <input type="text" class="txn" id="${id}-txn" name="txn" autocomplete="off" autocapitalize="off" spellcheck="false" inputmode="text" placeholder="txn_…">
+        <button type="submit" class="btn block" id="${id}-submit">${esc(t('purchase.restore_btn'))}</button>
+        <p class="license-msg" id="${id}-msg" role="status" aria-live="polite"></p>
+        <p class="muted small">${esc(t('purchase.restore_privacy'))}</p>
+      </form>
+    </details>`;
+}
+
+/**
+ * Podpina „Przywróć zakup”.
+ * @param {HTMLElement} root
+ * @param {{id?:string, cfg:object, onSuccess?:(res:object)=>void}} o
+ */
+export function bindRestoreForm(root, { id = 'rst', cfg, onSuccess } = {}) {
+  const form = root.querySelector(`#${id}-form`);
+  if (!form) return;
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const input = form.querySelector(`#${id}-txn`);
+    const msg = form.querySelector(`#${id}-msg`);
+    const btn = form.querySelector(`#${id}-submit`);
+    const txn = normalizeTxn(input.value);
+    let r;
+    if (!txn) r = { ok: false, reason: 'badtxn' };
+    else {
+      btn.disabled = true;
+      msg.className = 'license-msg';
+      msg.textContent = t('purchase.confirming');
+      try { r = await claimPurchase(txn, cfg, { delays: [0, 2000] }); } catch (err) { console.error(err); r = { ok: false, reason: 'server' }; }
+      btn.disabled = false;
+    }
+    msg.textContent = r.ok ? licenseMessage(r.res) : purchaseErrorText(r.reason);
+    msg.className = 'license-msg ' + (r.ok ? 'ok' : 'err');
+    if (r.ok) {
+      toast(t('license.toast_ok'));
+      if (onSuccess) onSuccess(r.res);
     } else {
       input.setAttribute('aria-invalid', 'true');
       input.focus();

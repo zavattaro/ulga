@@ -7,7 +7,8 @@ import { paywallMode, hasPremiumAccess } from '../promo.js';
 import { canPlay, isReady } from '../program.js';
 import { buildDailyIcs, downloadIcs } from '../ics.js';
 import * as offline from '../offline.js';
-import { licenseFormHtml, bindLicenseForm, planName } from './activate.js';
+import { licenseFormHtml, bindLicenseForm, planName, restoreFormHtml, bindRestoreForm } from './activate.js';
+import { licenseApiUrl } from '../checkout.js';
 import { esc, go, toast, fmtDate, icon } from '../ui.js';
 
 export function exportData() {
@@ -75,6 +76,7 @@ export async function renderSettings(app) {
         ${premium ? `<button type="button" class="btn ghost block" id="s-free">${esc(lic.active ? t('settings.license_remove') : t('settings.restore_free'))}</button>`
           : `<a class="btn block" href="#/paywall">${esc(t('settings.see_premium'))}</a>`}
         ${licenseFormHtml({ id: 'slic' })}
+        ${licenseApiUrl(cfg) && !(premium && lic.active) ? restoreFormHtml({ id: 'srst' }) : ''}
       </div>
 
       <h2>${esc(t('settings.privacy_h'))}</h2>
@@ -84,7 +86,9 @@ export async function renderSettings(app) {
         <div class="link-list">
           <a href="legal/privacy.html">${esc(t('settings.privacy_policy'))} ${icon('chevron', 'mini')}</a>
           <a href="legal/terms.html">${esc(t('settings.terms'))} ${icon('chevron', 'mini')}</a>
+          <a href="legal/refund.html">${esc(t('settings.refund_policy'))} ${icon('chevron', 'mini')}</a>
         </div>
+        <p class="small muted" lang="en">English: <a href="legal/en/terms.html">Terms</a> · <a href="legal/en/privacy.html">Privacy</a> · <a href="legal/en/refund.html">Refunds</a></p>
         <button type="button" class="btn ghost block" id="s-export">${esc(t('settings.export'))}</button>
         ${confirming ? `
           <div class="notice" role="alertdialog" aria-labelledby="del-h">
@@ -105,6 +109,7 @@ export async function renderSettings(app) {
         <p class="small muted">${esc(t('settings.version', { v: APP_VERSION }))}</p>
       </div>`;
     bindLicenseForm(app, { id: 'slic', onSuccess: () => setTimeout(draw, 1200) });
+    bindRestoreForm(app, { id: 'srst', cfg, onSuccess: () => setTimeout(draw, 1200) });
   }
 
   app.onchange = (e) => {
