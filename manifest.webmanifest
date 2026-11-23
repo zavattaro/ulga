@@ -1,0 +1,19 @@
+{
+  "name": "Ulga — sen i spokój",
+  "short_name": "Ulga",
+  "description": "Krótkie nagrania po polsku, które pomagają wyciszyć głowę i spokojnie zasnąć. Dźwięki na sen, wyłącznik czasowy, działa offline.",
+  "lang": "pl",
+  "dir": "ltr",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#0F1B2D",
+  "background_color": "#0F1B2D",
+  "categories": ["health", "lifestyle"],
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
