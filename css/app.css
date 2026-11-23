@@ -233,8 +233,9 @@ input[type="range"] { width: 100%; accent-color: var(--primary); height: 28px; b
 .license-box { margin: 16px 0; }
 .license-box summary { cursor: pointer; color: var(--primary); padding: 10px 0; }
 .license-form label { display: block; font-size: .9rem; margin: 6px 0; }
-textarea, input[type="time"] { width: 100%; font: 1rem ui-monospace, Menlo, monospace; padding: 10px 12px; border-radius: 12px; border: 1px solid var(--line); background: var(--bg2); color: var(--text); }
+textarea, input[type="time"], input.txn { width: 100%; font: 1rem ui-monospace, Menlo, monospace; padding: 10px 12px; border-radius: 12px; border: 1px solid var(--line); background: var(--bg2); color: var(--text); }
 input[type="time"] { width: auto; font-family: var(--font); min-height: 44px; }
+input.txn { min-height: 44px; margin-bottom: 8px; }
 .license-msg { font-size: .9rem; min-height: 1.2em; }
 .license-msg.ok { color: var(--primary); }
 .license-msg.err { color: var(--danger); }
