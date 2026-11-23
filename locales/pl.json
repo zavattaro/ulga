@@ -158,7 +158,7 @@
   "paywall.err_offline": "Brak internetu. Połącz się, aby dokonać zakupu.",
   "paywall.err_noprice": "Ten plan nie jest jeszcze dostępny.",
   "paywall.err_checkout": "Nie udało się otworzyć płatności. Spróbuj ponownie.",
-  "paywall.renewal": "Płatność obsługuje Paddle (sprzedawca, Merchant of Record). Przed odnowieniem planu rocznego wyślemy przypomnienie. Masz 14 dni na odstąpienie od umowy.",
+  "paywall.renewal": "Płatność obsługuje Paddle (sprzedawca, Merchant of Record). Każdą płatność Paddle potwierdza e-mailem z linkiem do anulowania. Masz 14 dni na odstąpienie od umowy.",
   "paywall.privacy_note": "Kod licencyjny sprawdzamy na tym urządzeniu. Nie zakładasz konta i nie wysyłamy żadnych twoich danych.",
   "promo.launch": "Na start wszystko za darmo — do {date}",
   "promo.paywall_banner": "Trwa promocja startowa: wszystkie nagrania i dźwięki są teraz bezpłatne.",
