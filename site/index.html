@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<script>
+  /* Adres aplikacji. Na produkcji aplikacja leży w katalogu głównym, a strona w /site/. */
+  const APP_URL = '../index.html';
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ulga — spokojna głowa, lepszy sen. Nagrania po polsku</title>
+<meta name="description" content="Ulga to krótkie nagrania po polsku, które pomagają wyciszyć głowę i spokojnie zasnąć. Bez ezoteryki, bez konta, bez reklam. Dźwięki na sen z wyłącznikiem czasowym, działa offline.">
+<meta name="theme-color" content="#0F1B2D">
+<meta name="color-scheme" content="dark">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pl_PL">
+<meta property="og:site_name" content="Ulga">
+<meta property="og:title" content="Ulga — spokojna głowa, lepszy sen">
+<meta property="og:description" content="Krótkie nagrania po polsku na sen i chwilę przerwy. Bez ezoteryki, bez konta, bez pułapek w subskrypcji.">
+<link rel="icon" type="image/png" sizes="192x192" href="../icons/icon-192.png">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Ulga — sen i spokój",
+  "description": "Krótkie nagrania po polsku, które pomagają wyciszyć głowę i spokojnie zasnąć. Dźwięki na sen, wyłącznik czasowy, działa offline.",
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "Android, iOS, Windows, macOS (przeglądarka internetowa)",
+  "inLanguage": "pl",
+  "offers": [
+    { "@type": "Offer", "price": "0", "priceCurrency": "PLN", "description": "Wersja darmowa" },
+    { "@type": "Offer", "price": "99", "priceCurrency": "PLN", "description": "Premium — rok" },
+    { "@type": "Offer", "price": "199", "priceCurrency": "PLN", "description": "Premium — na zawsze" }
+  ]
+}
+</script>
+<style>
+:root{
+  --bg:#0F1B2D; --bg2:#0B1422; --surface:#16243A; --surface2:#1D2E48;
+  --primary:#A9A6E8; --on-primary:#141A33; --sand:#E9DCC9; --muted:#9AA3B8;
+  --line:rgba(233,220,201,.10); --r:20px; --max:1040px;
+  --sans:system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--sand);font:17px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:var(--primary)}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 18px}
+.top{position:sticky;top:0;z-index:5;background:rgba(11,20,34,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;min-height:60px;gap:12px}
+.brand{display:flex;align-items:center;gap:10px;color:var(--sand);text-decoration:none;font-weight:650;font-size:1.15rem}
+.brand img{width:34px;height:34px;border-radius:9px}
+.top nav{display:flex;gap:18px;align-items:center}
+.top nav a{color:var(--muted);text-decoration:none;font-size:.95rem}
+.top nav .hide-s{display:none}
+@media(min-width:720px){.top nav .hide-s{display:inline}}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:.7em 1.5em;border-radius:999px;background:var(--primary);color:var(--on-primary);font-weight:650;text-decoration:none;border:0}
+.btn.small{min-height:40px;padding:.4em 1.1em;font-size:.92rem}
+.btn.ghost{background:transparent;color:var(--sand);box-shadow:inset 0 0 0 1px var(--line)}
+section{padding:64px 0}
+.alt{background:var(--bg2)}
+h1{font-size:clamp(2.1rem,6vw,3.4rem);line-height:1.1;margin:.2em 0 .35em;letter-spacing:-.02em;font-weight:650}
+h2{font-size:clamp(1.5rem,4vw,2.1rem);line-height:1.2;margin:0 0 .5em;letter-spacing:-.01em;font-weight:620}
+h3{font-size:1.1rem;margin:0 0 .3em}
+.eyebrow{font-size:.78rem;text-transform:uppercase;letter-spacing:.14em;color:var(--primary);margin:0}
+.lead{font-size:1.15rem;color:rgba(233,220,201,.85);max-width:36em}
+.muted{color:var(--muted)}
+.hero{position:relative;overflow:hidden;padding:56px 0 72px;background:radial-gradient(90% 70% at 70% 0%,var(--surface2) 0%,var(--bg) 60%)}
+.hero .wrap{display:grid;gap:40px;align-items:center}
+@media(min-width:860px){.hero .wrap{grid-template-columns:1.1fr .9fr}}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0 14px}
+.fine{font-size:.82rem;color:var(--muted)}
+.phone{justify-self:center;width:min(300px,80vw);aspect-ratio:9/18.5;border-radius:42px;background:linear-gradient(180deg,#14223A,#0B1422);box-shadow:0 0 0 10px #0a111d,0 30px 80px rgba(0,0,0,.5),0 0 120px rgba(169,166,232,.18);display:flex;flex-direction:column;align-items:center;padding:34px 22px;gap:14px}
+.phone .g{align-self:flex-start;color:rgba(233,220,201,.8);font-size:.9rem}
+.orb{width:62%;aspect-ratio:1;border-radius:50%;margin-top:18px;background:radial-gradient(circle at 50% 38%,#c9c7f3 0%,var(--primary) 55%,#5f5c9e 100%);display:flex;align-items:center;justify-content:center;color:var(--on-primary);font-weight:650;font-size:1.3rem;box-shadow:0 0 0 12px rgba(169,166,232,.1),0 0 0 26px rgba(169,166,232,.05);animation:br 8s ease-in-out infinite}
+@keyframes br{50%{transform:scale(1.04)}}
+@media(prefers-reduced-motion:reduce){.orb{animation:none}}
+.phone .t{margin-top:22px;text-align:center}
+.phone .t small{display:block;color:var(--primary);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase}
+.phone .rows{width:100%;margin-top:auto;border:1px solid var(--line);border-radius:14px;font-size:.8rem}
+.phone .rows div{padding:8px 12px;display:flex;justify-content:space-between}
+.phone .rows div+div{border-top:1px solid var(--line)}
+.grid{display:grid;gap:14px}
+@media(min-width:720px){.grid.c3{grid-template-columns:repeat(3,1fr)}.grid.c2{grid-template-columns:repeat(2,1fr)}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:20px}
+.card p{margin:.3em 0 0;color:rgba(233,220,201,.85)}
+.num{display:inline-flex;width:34px;height:34px;border-radius:50%;align-items:center;justify-content:center;background:rgba(169,166,232,.16);color:var(--primary);font-weight:700;margin-bottom:10px}
+.list{list-style:none;padding:0;margin:12px 0 0}
+.list li{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid var(--line);font-size:.95rem}
+.list li span:last-child{color:var(--muted);white-space:nowrap}
+.tag{font-size:.7rem;background:rgba(169,166,232,.18);color:var(--primary);border-radius:999px;padding:2px 8px;margin-left:6px;vertical-align:2px}
+.tag.soon{background:transparent;color:var(--muted);border:1px dashed var(--line)}
+.tag.ok{background:rgba(140,200,160,.18);color:#9fd6b0}
+.note{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin:12px 0 18px;font-size:.95rem}
+.sounds{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:18px}
+@media(min-width:720px){.sounds{grid-template-columns:repeat(3,1fr)}}
+.sound{position:relative;overflow:hidden;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:18px 16px;min-height:96px}
+.sound::before{content:'';position:absolute;right:-20px;top:-20px;width:76px;height:76px;border-radius:50%;background:var(--c);opacity:.25}
+.sound b{display:block}
+.sound span{font-size:.85rem;color:var(--muted)}
+.plans{display:grid;gap:14px;margin-top:20px}
+@media(min-width:860px){.plans{grid-template-columns:repeat(4,1fr)}}
+.plan{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:20px;display:flex;flex-direction:column;gap:6px;position:relative}
+.plan.best{border-color:var(--primary);box-shadow:inset 0 0 0 1px var(--primary)}
+.plan .price{font-size:1.8rem;font-weight:650}
+.plan .price small{font-size:.9rem;color:var(--muted);font-weight:400}
+.plan ul{padding-left:1.1em;margin:6px 0 0;color:rgba(233,220,201,.85);font-size:.92rem}
+.badge{position:absolute;top:14px;right:14px;background:var(--primary);color:var(--on-primary);font-size:.72rem;font-weight:700;border-radius:999px;padding:3px 10px}
+details{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:0 18px;margin-bottom:10px}
+summary{cursor:pointer;padding:16px 0;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:'+';color:var(--muted);font-size:1.3rem;line-height:1}
+details[open] summary::after{content:'–'}
+details p{margin:0 0 16px;color:rgba(233,220,201,.85)}
+.final{text-align:center;background:radial-gradient(70% 90% at 50% 100%,var(--surface2) 0%,var(--bg) 70%)}
+footer{border-top:1px solid var(--line);padding:32px 0 48px;font-size:.9rem;color:var(--muted)}
+footer nav{display:flex;flex-wrap:wrap;gap:16px;margin:10px 0}
+footer a{color:var(--muted)}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="../icons/icon-192.png" alt="" width="34" height="34">Ulga</a>
+    <nav aria-label="Nawigacja">
+      <a class="hide-s" href="#jak">Jak to działa</a>
+      <a class="hide-s" href="#plany">Ceny</a>
+      <a class="hide-s" href="#pytania">Pytania</a>
+      <a class="btn small app-link" href="../index.html">Otwórz</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="top">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">Sen i spokój · po polsku</p>
+        <h1>Spokojna głowa, lepszy sen.</h1>
+        <p class="lead">Ulga to krótkie nagrania, przy których łatwiej wyłączyć myśli i zasnąć. Zamykasz oczy, naciskasz jeden przycisk i słuchasz. Bez ezoteryki, bez konta, bez pułapek w subskrypcji.</p>
+        <div class="cta">
+          <a class="btn app-link" href="../index.html">Zacznij za darmo</a>
+          <a class="btn ghost" href="#jak">Jak to działa</a>
+        </div>
+        <p class="fine">Działa w przeglądarce na telefonie i komputerze. Możesz dodać ją do ekranu głównego jak zwykłą aplikację.</p>
+      </div>
+      <div class="phone" aria-hidden="true">
+        <span class="g">☾ Dobry wieczór</span>
+        <div class="orb">Zacznij</div>
+        <div class="t"><small>Na początek · Dzień 1</small>Oddech na start<br><span class="muted" style="font-size:.85rem">5 min</span></div>
+        <div class="rows"><div><span>Deszcz</span><span class="muted">tło</span></div><div><span>Wyciszenie za</span><span class="muted">30:00</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="jak" aria-labelledby="jak-h">
+    <div class="wrap">
+      <p class="eyebrow">Jak to działa</p>
+      <h2 id="jak-h">Jeden przycisk. Reszta to słuchanie.</h2>
+      <div class="grid c3" style="margin-top:20px">
+        <div class="card"><span class="num">1</span><h3>Naciśnij „Zacznij”</h3><p>Wieczorem Ulga proponuje sesję na sen, w ciągu dnia — krótką przerwę. Na początek: program „Pierwsze 7 dni”.</p></div>
+        <div class="card"><span class="num">2</span><h3>Zamknij oczy</h3><p>Spokojny głos prowadzi powoli, z długimi przerwami na oddech. Nikt cię nie pogania.</p></div>
+        <div class="card"><span class="num">3</span><h3>Zaśnij</h3><p>Ustaw wyłącznik czasowy. Dźwięk w tle wycisza się sam, łagodnie, a telefon może leżeć z wygaszonym ekranem.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt" id="sesje" aria-labelledby="sesje-h">
+    <div class="wrap">
+      <p class="eyebrow">Nagrania</p>
+      <h2 id="sesje-h">Sesje: od pierwszego oddechu do głębokiego snu</h2>
+      <p class="muted">Świeckie, proste ćwiczenia uważności: oddech, skan ciała, wyobrażenia. Od 3 do 15 minut.</p>
+      <p class="note" id="sesje-uczciwie"><strong>Nowe nagrania dochodzą co kilka dni.</strong> Już teraz możesz posłuchać „Oddech na start” i włączyć dźwięki do snu. Sesje oznaczone „nagrywamy” właśnie powstają — pojawią się w aplikacji same, gdy będą gotowe.</p>
+      <div class="grid c3">
+        <div class="card"><h3>Pierwsze 7 dni</h3>
+          <ul class="list">
+            <li><span>Oddech na start <span class="tag">gratis</span> <span class="tag ok">już jest</span></span><span>5 min</span></li>
+            <li><span>Ciało tu i teraz <span class="tag">gratis</span> <span class="tag soon">nagrywamy</span></span><span>6 min</span></li>
+            <li><span>Myśli jak chmury <span class="tag">gratis</span> <span class="tag soon">nagrywamy</span></span><span>7 min</span></li>
+            <li><span>Puść napięcie <span class="tag soon">nagrywamy</span></span><span>8 min</span></li>
+            <li><span>…i trzy kolejne dni <span class="tag soon">nagrywamy</span></span><span>8–10 min</span></li>
+          </ul></div>
+        <div class="card"><h3>Sen</h3>
+          <ul class="list">
+            <li><span>Liczenie oddechów w łóżku <span class="tag">gratis</span> <span class="tag soon">nagrywamy</span></span><span>10 min</span></li>
+            <li><span>Wyłącz głowę przed snem <span class="tag soon">nagrywamy</span></span><span>12 min</span></li>
+            <li><span>Skan ciała do snu <span class="tag soon">nagrywamy</span></span><span>15 min</span></li>
+            <li><span>Gdy budzisz się w nocy <span class="tag soon">nagrywamy</span></span><span>8 min</span></li>
+            <li><span>Spacer nad jeziorem <span class="tag soon">nagrywamy</span></span><span>15 min</span></li>
+          </ul></div>
+        <div class="card"><h3>Krótkie pauzy</h3>
+          <ul class="list">
+            <li><span>3 minuty oddechu <span class="tag">gratis</span> <span class="tag soon">nagrywamy</span></span><span>3 min</span></li>
+            <li><span>Reset po pracy <span class="tag soon">nagrywamy</span></span><span>5 min</span></li>
+            <li><span>Oddech pudełkowy <span class="tag soon">nagrywamy</span></span><span>4 min</span></li>
+            <li><span>Przed trudną rozmową <span class="tag soon">nagrywamy</span></span><span>5 min</span></li>
+            <li><span>Spokojny poranek · Ramiona i kark <span class="tag soon">nagrywamy</span></span><span>4–5 min</span></li>
+          </ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="dzwieki" aria-labelledby="dzw-h">
+    <div class="wrap">
+      <p class="eyebrow">Dźwięki</p>
+      <h2 id="dzw-h">Dźwięki na sen — bez reklam w środku nocy</h2>
+      <p class="muted">Powstają na bieżąco w telefonie, więc nie zajmują miejsca i działają bez internetu. Wyłącznik od 5 do 60 minut albo bez limitu, z delikatnym gongiem na początek i koniec.</p>
+      <div class="sounds">
+        <div class="sound" style="--c:#7FA7D9"><b>Deszcz</b><span>gratis</span></div>
+        <div class="sound" style="--c:#D9A7C7"><b>Szum różowy</b><span>gratis</span></div>
+        <div class="sound" style="--c:#C9A27A"><b>Szum brązowy</b><span>premium</span></div>
+        <div class="sound" style="--c:#6FC2C0"><b>Fale</b><span>premium</span></div>
+        <div class="sound" style="--c:#A9A6E8"><b>Ambient</b><span>premium</span></div>
+        <div class="sound" style="--c:#8DBF8A"><b>Las nocą</b><span>premium</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt" id="plany" aria-labelledby="plany-h">
+    <div class="wrap">
+      <p class="eyebrow">Ceny</p>
+      <h2 id="plany-h">Uczciwie: zacznij za darmo, płać tylko, jeśli chcesz więcej</h2>
+      <p class="muted">Bez okresu próbnego, który sam zamienia się w roczną opłatę. Przed odnowieniem planu rocznego wyślemy przypomnienie.</p>
+      <div class="plans">
+        <div class="plan"><h3>Darmowa</h3><div class="price">0 zł</div><ul><li>5 sesji gratis (w tym 3 dni programu) — dochodzą w miarę nagrywania</li><li>Deszcz i szum różowy</li><li>Wyłącznik czasowy bez limitu</li><li>Bez reklam</li></ul></div>
+        <div class="plan"><h3>Miesięcznie</h3><div class="price">14,99 zł <small>/ mies.</small></div><ul><li>Wszystkie nagrania i dźwięki, także te dopiero nagrywane</li><li>Pobieranie na telefon</li><li>Anulujesz w każdej chwili</li></ul></div>
+        <div class="plan best"><span class="badge">Najkorzystniej</span><h3>Rocznie</h3><div class="price">99 zł <small>/ rok</small></div><ul><li>Ok. 8,25 zł miesięcznie</li><li>Wszystko z wersji premium</li><li>Przypomnienie przed odnowieniem</li></ul></div>
+        <div class="plan"><h3>Na zawsze</h3><div class="price">199 zł <small>raz</small></div><ul><li>Jedna płatność, bez subskrypcji</li><li>Wszystko z wersji premium</li><li>Także nowe nagrania</li></ul></div>
+      </div>
+      <p class="fine" style="margin-top:14px">Płatności obsługuje Paddle (Merchant of Record), także BLIK. Ceny zawierają VAT. 14 dni na odstąpienie od umowy.</p>
+    </div>
+  </section>
+
+  <section id="pytania" aria-labelledby="faq-h">
+    <div class="wrap" style="max-width:780px">
+      <p class="eyebrow">Pytania</p>
+      <h2 id="faq-h">Najczęstsze pytania</h2>
+      <details><summary>Czy to medytacja religijna albo ezoteryczna?</summary><p>Nie. Ulga jest świecka: proste ćwiczenia oddechu, uwagi i rozluźnienia ciała, bez mantr, energii i czakr.</p></details>
+      <details id="faq-ai"><summary>Kto czyta nagrania? (o głosie AI)</summary><p>Głos lektora został wygenerowany przez AI (Google Gemini). Teksty piszemy sami, a każde nagranie składamy z krótkich fragmentów z długimi, zaplanowanymi przerwami — dzięki temu tempo jest naprawdę spokojne. Informujemy o tym otwarcie w aplikacji, zgodnie z unijnym AI Act. Do tworzenia głosu nie są używane żadne twoje dane.</p></details>
+      <details><summary>Czy Ulga pomoże na bezsenność?</summary><p>Ulga pomaga się wyciszyć i odprężyć przed snem, ale nie jest wyrobem medycznym i nie leczy zaburzeń snu. Jeśli problemy ze snem trwają dłużej, porozmawiaj z lekarzem.</p></details>
+      <details><summary>Czy działa bez internetu?</summary><p>Tak. Aplikacja zapisuje się w telefonie, a nagrania możesz pobrać przyciskiem „Pobierz na telefon”. Dźwięki w tle działają zawsze, bo powstają w telefonie.</p></details>
+      <details><summary>Czy muszę zakładać konto?</summary><p>Nie. Nie ma konta, analityki ani reklam. Postępy zostają tylko na twoim urządzeniu. Po zakupie dostajesz e-mailem kod licencyjny, który wpisujesz w aplikacji.</p></details>
+      <details><summary>Jak przypomnieć sobie o wieczornej sesji?</summary><p>W Ustawieniach wybierz godzinę i naciśnij „Dodaj do kalendarza”. Do twojego kalendarza trafi codzienne wydarzenie z powiadomieniem — działa na iPhonie i Androidzie.</p></details>
+      <details><summary>Jak zrezygnować z subskrypcji?</summary><p>Linkiem w e-mailu z potwierdzeniem zakupu, w każdej chwili. Dostęp trwa do końca opłaconego okresu. Jeśli nie lubisz subskrypcji, wybierz plan „Na zawsze”.</p></details>
+    </div>
+  </section>
+
+  <section class="final" aria-labelledby="final-h">
+    <div class="wrap">
+      <h2 id="final-h">Dziś wieczorem spróbuj zasnąć spokojniej</h2>
+      <p class="muted">Pierwszy dzień programu trwa 5 minut i jest za darmo.</p>
+      <div class="cta" style="justify-content:center"><a class="btn app-link" href="../index.html">Zacznij za darmo</a></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><strong>Ulga — sen i spokój.</strong> Głos lektora został wygenerowany przez AI (Google Gemini). Ulga nie jest wyrobem medycznym i nie zastępuje porady lekarza. W kryzysie: 116 123, w nagłym zagrożeniu: 112.</p>
+    <nav aria-label="Informacje prawne">
+      <a href="../legal/privacy.html">Polityka prywatności</a>
+      <a href="../legal/terms.html">Regulamin</a>
+      <a href="mailto:appolonia.modlitwa@gmail.com">Kontakt: appolonia.modlitwa@gmail.com</a>
+    </nav>
+    <p>© 2026 Enio Zavattaro (osoba fizyczna, Brazylia). Płatności: Paddle.com (Merchant of Record).</p>
+  </div>
+</footer>
+<script>document.querySelectorAll('.app-link').forEach(function (a) { a.href = APP_URL; });</script>
+</body>
+</html>
