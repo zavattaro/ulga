@@ -5,7 +5,7 @@
 //    cached file with 206 so seeking works offline.
 //  - content/sessions.json: network-first, so recordings published later ("ready": true) show up.
 // NEVER add keys/ or scripts/ here (private license key!).
-const CACHE_VERSION = 'ulga-v4';
+const CACHE_VERSION = 'ulga-v5';
 const AUDIO_CACHE = 'ulga-audio-v1';
 const PRECACHE = [
   './',
