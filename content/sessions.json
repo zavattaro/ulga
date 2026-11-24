@@ -25,11 +25,11 @@
       "day": 2,
       "free": true,
       "bg": "pink",
-      "durationSec": 365,
-      "durationSource": "estimate",
-      "bytes": 2190000,
+      "durationSec": 339,
+      "durationSource": "ffprobe",
+      "bytes": 1527731,
       "audio": "audio/voice/d2-cialo-tu-i-teraz.m4a",
-      "ready": false
+      "ready": true
     },
     {
       "id": "d3-mysli-jak-chmury",
@@ -41,10 +41,10 @@
       "free": true,
       "bg": "drone",
       "durationSec": 423,
-      "durationSource": "estimate",
-      "bytes": 2538000,
+      "durationSource": "ffprobe",
+      "bytes": 1685302,
       "audio": "audio/voice/d3-mysli-jak-chmury.m4a",
-      "ready": false
+      "ready": true
     },
     {
       "id": "d4-pusc-napiecie",
@@ -55,11 +55,11 @@
       "day": 4,
       "free": false,
       "bg": "brown",
-      "durationSec": 483,
-      "durationSource": "estimate",
-      "bytes": 2898000,
+      "durationSec": 536,
+      "durationSource": "ffprobe",
+      "bytes": 2421441,
       "audio": "audio/voice/d4-pusc-napiecie.m4a",
-      "ready": false
+      "ready": true
     },
     {
       "id": "d5-uwazne-dzwieki",
@@ -70,11 +70,11 @@
       "day": 5,
       "free": false,
       "bg": "forest",
-      "durationSec": 483,
-      "durationSource": "estimate",
-      "bytes": 2898000,
+      "durationSec": 462,
+      "durationSource": "ffprobe",
+      "bytes": 1239857,
       "audio": "audio/voice/d5-uwazne-dzwieki.m4a",
-      "ready": false
+      "ready": true
     },
     {
       "id": "d6-zyczliwosc-dla-siebie",
@@ -85,11 +85,11 @@
       "day": 6,
       "free": false,
       "bg": "drone",
-      "durationSec": 553,
-      "durationSource": "estimate",
-      "bytes": 3318000,
+      "durationSec": 572,
+      "durationSource": "ffprobe",
+      "bytes": 2394326,
       "audio": "audio/voice/d6-zyczliwosc-dla-siebie.m4a",
-      "ready": false
+      "ready": true
     },
     {
       "id": "d7-twoja-praktyka",
@@ -100,11 +100,11 @@
       "day": 7,
       "free": false,
       "bg": "waves",
-      "durationSec": 604,
-      "durationSource": "estimate",
-      "bytes": 3624000,
+      "durationSec": 612,
+      "durationSource": "ffprobe",
+      "bytes": 1678840,
       "audio": "audio/voice/d7-twoja-praktyka.m4a",
-      "ready": false
+      "ready": true
     },
     {
       "id": "sen-wylacz-glowe-przed-snem",
@@ -115,11 +115,11 @@
       "day": null,
       "free": false,
       "bg": "rain",
-      "durationSec": 722,
-      "durationSource": "estimate",
-      "bytes": 4332000,
+      "durationSec": 736,
+      "durationSource": "ffprobe",
+      "bytes": 2450435,
       "audio": "audio/voice/sen-wylacz-glowe-przed-snem.m4a",
-      "ready": false
+      "ready": true
     },
     {
       "id": "sen-skan-ciala-do-snu",
@@ -130,11 +130,11 @@
       "day": null,
       "free": false,
       "bg": "brown",
-      "durationSec": 888,
-      "durationSource": "estimate",
-      "bytes": 5328000,
+      "durationSec": 914,
+      "durationSource": "ffprobe",
+      "bytes": 2778642,
       "audio": "audio/voice/sen-skan-ciala-do-snu.m4a",
-      "ready": false
+      "ready": true
     },
     {
       "id": "sen-liczenie-oddechow-w-lozku",
@@ -145,11 +145,11 @@
       "day": null,
       "free": true,
       "bg": "pink",
-      "durationSec": 601,
-      "durationSource": "estimate",
-      "bytes": 3606000,
+      "durationSec": 613,
+      "durationSource": "ffprobe",
+      "bytes": 1552581,
       "audio": "audio/voice/sen-liczenie-oddechow-w-lozku.m4a",
-      "ready": false
+      "ready": true
     },
     {
       "id": "sen-gdy-budzisz-sie-w-nocy",
@@ -160,11 +160,11 @@
       "day": null,
       "free": false,
       "bg": "brown",
-      "durationSec": 478,
-      "durationSource": "estimate",
-      "bytes": 2868000,
+      "durationSec": 482,
+      "durationSource": "ffprobe",
+      "bytes": 980259,
       "audio": "audio/voice/sen-gdy-budzisz-sie-w-nocy.m4a",
-      "ready": false
+      "ready": true
     },
     {
       "id": "sen-spacer-nad-jeziorem",
@@ -175,11 +175,11 @@
       "day": null,
       "free": false,
       "bg": "forest",
-      "durationSec": 907,
-      "durationSource": "estimate",
-      "bytes": 5442000,
+      "durationSec": 913,
+      "durationSource": "ffprobe",
+      "bytes": 2245493,
       "audio": "audio/voice/sen-spacer-nad-jeziorem.m4a",
-      "ready": false
+      "ready": true
     },
     {
       "id": "pauza-3-minuty-oddechu",
@@ -190,11 +190,11 @@
       "day": null,
       "free": true,
       "bg": "drone",
-      "durationSec": 183,
-      "durationSource": "estimate",
-      "bytes": 1098000,
+      "durationSec": 203,
+      "durationSource": "ffprobe",
+      "bytes": 951825,
       "audio": "audio/voice/pauza-3-minuty-oddechu.m4a",
-      "ready": false
+      "ready": true
     },
     {
       "id": "pauza-reset-po-pracy",
@@ -205,11 +205,11 @@
       "day": null,
       "free": false,
       "bg": "rain",
-      "durationSec": 302,
-      "durationSource": "estimate",
-      "bytes": 1812000,
+      "durationSec": 292,
+      "durationSource": "ffprobe",
+      "bytes": 1107291,
       "audio": "audio/voice/pauza-reset-po-pracy.m4a",
-      "ready": false
+      "ready": true
     },
     {
       "id": "pauza-oddech-pudelkowy",
@@ -220,11 +220,11 @@
       "day": null,
       "free": false,
       "bg": "drone",
-      "durationSec": 244,
-      "durationSource": "estimate",
-      "bytes": 1464000,
+      "durationSec": 304,
+      "durationSource": "ffprobe",
+      "bytes": 1670694,
       "audio": "audio/voice/pauza-oddech-pudelkowy.m4a",
-      "ready": false
+      "ready": true
     },
     {
       "id": "pauza-przed-trudna-rozmowa",
@@ -235,11 +235,11 @@
       "day": null,
       "free": false,
       "bg": "pink",
-      "durationSec": 303,
-      "durationSource": "estimate",
-      "bytes": 1818000,
+      "durationSec": 310,
+      "durationSource": "ffprobe",
+      "bytes": 1307277,
       "audio": "audio/voice/pauza-przed-trudna-rozmowa.m4a",
-      "ready": false
+      "ready": true
     },
     {
       "id": "pauza-spokojny-poranek",
@@ -250,11 +250,11 @@
       "day": null,
       "free": false,
       "bg": "forest",
-      "durationSec": 304,
-      "durationSource": "estimate",
-      "bytes": 1824000,
+      "durationSec": 322,
+      "durationSource": "ffprobe",
+      "bytes": 1282629,
       "audio": "audio/voice/pauza-spokojny-poranek.m4a",
-      "ready": false
+      "ready": true
     },
     {
       "id": "pauza-ramiona-i-kark",
@@ -265,11 +265,11 @@
       "day": null,
       "free": false,
       "bg": "brown",
-      "durationSec": 246,
-      "durationSource": "estimate",
-      "bytes": 1476000,
+      "durationSec": 255,
+      "durationSource": "ffprobe",
+      "bytes": 1147792,
       "audio": "audio/voice/pauza-ramiona-i-kark.m4a",
-      "ready": false
+      "ready": true
     }
   ]
 }
