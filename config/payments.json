@@ -14,7 +14,7 @@
   },
   "trialDays": 0,
   "successUrl": "",
-  "licenseApi": "",
+  "licenseApi": "https://licencas.appolonia-modlitwa.workers.dev",
   "publicKeyJwk": {
     "kty": "EC",
     "crv": "P-256",
